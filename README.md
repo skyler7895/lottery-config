@@ -1,6 +1,6 @@
 # Thai lottery draw overrides
 
-Public endpoint: https://dev-skywalker.github.io/lottery-config/draw-overrides.json
+Public endpoint: https://skyler7895.github.io/lottery-config/draw-overrides.json
 
 This repository is the authoritative **complete** list of exceptional dates.
 Normal draws (1st and 16th) and recurring shifts (January 1 → January 2,
@@ -31,7 +31,7 @@ Devices must open/resume the app to receive changes and update local reminders.
 
 ## Initial publishing
 
-Create public repository `dev-skywalker/lottery-config` and push these files
+Create public repository `skyler7895/lottery-config` and push these files
 to `main`, including `.nojekyll`. In Settings → Pages, choose **Deploy from a
 branch**, **main**, **/(root)**. No build tools, server, or API key are needed.
 
