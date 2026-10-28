@@ -6,6 +6,12 @@ This repository is the authoritative **complete** list of exceptional dates.
 Normal draws (1st and 16th) and recurring shifts (January 1 → January 2,
 January 16 → January 17, May 1 → May 2) are calculated in the app.
 
+The researched snapshot contains 73 overrides covering the available
+1990–2026 date archive, three cancelled 2020 issues, and one GLO result-date
+lookup exception. [sources.md](sources.md) records the evidence for every entry,
+distinguishing original GLO sheets from corroborated older archives. The 2026
+December postponement is an announced future entry, outside observed history.
+
 ## Updating dates
 
 1. Verify the date against a GLO announcement or published result. Add the
@@ -22,6 +28,18 @@ Deleting an entry restores the recurring/default calculation; an empty
 `overrides` object intentionally removes **all** exceptional dates. Keep old
 entries for historical calendars unless deliberately correcting them.
 
+Optional schema-1 fields support the 2020 COVID suspension:
+
+- `cancelled`: nominal dates for issues that were not issued. These must not
+  overlap override keys. Cancelling nominal May 16 does not cancel the April 1
+  issue that was actually drawn on May 16.
+- `resultDateOverrides`: actual day → GLO API ticket date. For example,
+  `2020-05-16` looks up `2020-04-01` in GLO. Each mapping must correspond to a
+  nominal → actual override. Omitted optional fields mean empty collections.
+
+App versions must support these optional fields for accurate COVID-period
+calendars and result lookup. Keep all three fields when editing the full snapshot.
+
 The app checks on launch, foreground resume, and network reconnection,
 coalescing checks within 60 seconds. It keeps the last valid document offline
 and uses bundled defaults only when no valid cache exists. Invalid JSON,
@@ -35,5 +53,5 @@ Create public repository `skyler7895/lottery-config` and push these files
 to `main`, including `.nojekyll`. In Settings → Pages, choose **Deploy from a
 branch**, **main**, **/(root)**. No build tools, server, or API key are needed.
 
-These are the initial publishing files supplied with the app. After publishing,
-maintain the live data in this configuration repository.
+The app also includes a publishing copy of these files. Maintain ongoing live
+data here and keep the app's reference files and evidence ledger in sync.
